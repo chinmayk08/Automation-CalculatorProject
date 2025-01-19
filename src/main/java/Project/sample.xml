@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="Practical suit 1">
+
+    <test name="ABC">
+           <classes>
+               <class name="Project.tests.AdditionTest"/>
+               <class name="Project.tests.MinusTest"/>
+               <class name="Project.tests.DivideTest"/>
+               <class name="Project.tests.MultiplyTest"/>
+           </classes>
+    </test>
+
+    <!--<test name="XYZ">
+        <classes>
+            <class name="corejava.testng.Assignment1"/>
+        </classes>
+    </test>-->
+
+</suite>
+
