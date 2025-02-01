@@ -8,7 +8,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 public class ExecutionDriver {
-    public WebDriver driver;
+    public static WebDriver driver;
 
     @BeforeSuite
     public void ExecutionDriver(){

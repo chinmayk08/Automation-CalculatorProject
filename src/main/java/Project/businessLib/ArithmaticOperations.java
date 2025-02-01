@@ -10,17 +10,17 @@ public class ArithmaticOperations {
 
     public ArithmaticOperations(WebDriver driver) {
         this.driver = driver;
-
         CalculatorPage = new CalculatorPage(driver);
     }
 
-    public int performOperation(String operation, int... numbers) {
+    public int performOperation(String operation, float... numbers) {
 
         CalculatorPage.back.click();
 
-        int count=numbers.length;
 
-        for (int number: numbers){
+        float count=numbers.length;
+
+        for (float number: numbers){
             String numberString=String.valueOf(number);
 
             for(int i=0; i<numberString.length();i++){
@@ -32,7 +32,6 @@ public class ArithmaticOperations {
                 else{
                     clickSign(numberchar);
                 }
-
             }
             count--;
             if (count!=0){
@@ -113,6 +112,9 @@ public class ArithmaticOperations {
         switch(sign){
             case '-':
                 CalculatorPage.minus.click();
+                break;
+            case '.':
+                CalculatorPage.point.click();
                 break;
         }
 

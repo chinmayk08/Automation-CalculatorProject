@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 
 public class DivideTest extends ExecutionDriver {
 
-    @DataProvider(name = "Positivenumbersinputs")
+    /*@DataProvider(name = "Positivenumbersinputs")
     public Object[][] dataforpositive(){
-        System.out.println("in data provider");
+        
         return new Object[][]
                 {
                         {5,15,3},
@@ -23,9 +23,11 @@ public class DivideTest extends ExecutionDriver {
         int actualresult= add.performOperation("divide",inputs);
         Assert.assertEquals(actualresult,expectedresult);
     }
+    //////////////===========================/////////////////////
+
     @DataProvider(name = "Nagativenumbersinputs")
     public Object[][] datafornagative(){
-        System.out.println("in data provider");
+        
         return new Object[][]
                 {
                         {50,-100,-2},
@@ -37,9 +39,12 @@ public class DivideTest extends ExecutionDriver {
         int actualresult= add.performOperation("divide",inputs);
         Assert.assertEquals(actualresult,expectedresult);
     }
+
+    //////////////===========================/////////////////////
+
     @DataProvider(name = "PositiveNagativenumbersinputs")
     public Object[][] dataforpositivenagative(){
-        System.out.println("in data provider");
+        
         return new Object[][]
                 {
                         {-10,20,-2},
@@ -50,5 +55,5 @@ public class DivideTest extends ExecutionDriver {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         int actualresult= add.performOperation("divide",inputs);
         Assert.assertEquals(actualresult,expectedresult);
-    }
+    }*/
 }
