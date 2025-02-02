@@ -13,20 +13,19 @@ public class AdditionTest extends ExecutionDriver {
         return new Object[][]
                 {
                         {3.1, 1.1, 2.0},
-
                 };
     }
 
     @Test(priority = 1, dataProvider = "Positivenumbersinputs")
-    public void intPositiveTest(float expectedresult, float... inputs ) {
+    public void intPositiveTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
-        float actualresult = add.performOperation("Add", inputs);
+        double actualresult = add.performOperation("Add", inputs);
         Assert.assertEquals(actualresult, expectedresult);
     }
 
     //////////////===========================/////////////////////
 
-    /*@DataProvider(name = "Nagativenumbersinputs")
+    @DataProvider(name = "Nagativenumbersinputs")
     public Object[][] datafornagative() {
         return new Object[][]
                 {
@@ -34,9 +33,9 @@ public class AdditionTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2, dataProvider = "Nagativenumbersinputs")
-    public void intNagativeTest(int expectedresult, int... inputs) {
+    public void intNagativeTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
-        int actualresult = add.performOperation("Add", inputs);
+        double actualresult = add.performOperation("Add", inputs);
         Assert.assertEquals(actualresult, expectedresult);
     }
 
@@ -50,9 +49,9 @@ public class AdditionTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3, dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativeTest(int expectedresult, int... inputs) {
+    public void ispositiveagativeTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
-        int actualresult = add.performOperation("Add", inputs);
+        double actualresult = add.performOperation("Add", inputs);
         Assert.assertEquals(actualresult, expectedresult);
-    }*/
+    }
 }

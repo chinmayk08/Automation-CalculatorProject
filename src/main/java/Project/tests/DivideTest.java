@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class DivideTest extends ExecutionDriver {
 
-    /*@DataProvider(name = "Positivenumbersinputs")
+    @DataProvider(name = "Positivenumbersinputs")
     public Object[][] dataforpositive(){
         
         return new Object[][]
@@ -18,9 +18,9 @@ public class DivideTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 1,dataProvider = "Positivenumbersinputs")
-    public void intPositiveDivideTest(int expectedresult, int...inputs) {
+    public void intPositiveDivideTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
-        int actualresult= add.performOperation("divide",inputs);
+        double actualresult= add.performOperation("divide",inputs);
         Assert.assertEquals(actualresult,expectedresult);
     }
     //////////////===========================/////////////////////
@@ -34,9 +34,9 @@ public class DivideTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2,dataProvider = "Nagativenumbersinputs")
-    public void intNagativeDivideTest(int expectedresult, int...inputs) {
+    public void intNagativeDivideTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
-        int actualresult= add.performOperation("divide",inputs);
+        double actualresult= add.performOperation("divide",inputs);
         Assert.assertEquals(actualresult,expectedresult);
     }
 
@@ -51,9 +51,9 @@ public class DivideTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3,dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativeDivideTest(int expectedresult, int...inputs) {
+    public void ispositiveagativeDivideTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
-        int actualresult= add.performOperation("divide",inputs);
+        double actualresult= add.performOperation("divide",inputs);
         Assert.assertEquals(actualresult,expectedresult);
-    }*/
+    }
 }

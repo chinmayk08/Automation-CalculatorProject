@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MultiplyTest extends ExecutionDriver {
-    /*@DataProvider(name = "Positivenumbersinputs")
+    @DataProvider(name = "Positivenumbersinputs")
     public Object[][] dataforpositive(){
         
         return new Object[][]
@@ -16,9 +16,9 @@ public class MultiplyTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 1,dataProvider ="Positivenumbersinputs" )
-    public void intPositivemultiplyTest(int expectedresult, int...inputs) {
+    public void intPositivemultiplyTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
-        int actualresult= add.performOperation("multiply",inputs);
+        double actualresult= add.performOperation("multiply",inputs);
         Assert.assertEquals(actualresult,expectedresult);
     }
 
@@ -34,9 +34,9 @@ public class MultiplyTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2,dataProvider ="Nagativenumbersinputs" )
-    public void intNagativemultiplyTest(int expectedresult, int...inputs) {
+    public void intNagativemultiplyTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
-        int actualresult= add.performOperation("multiply",inputs);
+        double actualresult= add.performOperation("multiply",inputs);
         Assert.assertEquals(actualresult,expectedresult);
     }
 
@@ -51,9 +51,9 @@ public class MultiplyTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3,dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativemultiplyTest(int expectedresult, int...inputs) {
+    public void ispositiveagativemultiplyTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
-        int actualresult= add.performOperation("multiply",inputs);
+        double actualresult= add.performOperation("multiply",inputs);
         Assert.assertEquals(actualresult,expectedresult);
-    }*/
+    }
 }

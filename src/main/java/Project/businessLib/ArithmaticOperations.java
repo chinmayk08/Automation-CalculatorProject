@@ -13,14 +13,13 @@ public class ArithmaticOperations {
         CalculatorPage = new CalculatorPage(driver);
     }
 
-    public int performOperation(String operation, float... numbers) {
+    public double performOperation(String operation, double... numbers) {
 
         CalculatorPage.back.click();
 
+        double count=numbers.length;
 
-        float count=numbers.length;
-
-        for (float number: numbers){
+        for (double number: numbers){
             String numberString=String.valueOf(number);
 
             for(int i=0; i<numberString.length();i++){
@@ -41,7 +40,7 @@ public class ArithmaticOperations {
 
         CalculatorPage.equals.click();
         String actualresult = CalculatorPage.outputField.getText().trim();
-        return Integer.parseInt(actualresult);
+        return Double.parseDouble(actualresult);
     }
 
     private void clickNumber(int number) {
