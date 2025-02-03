@@ -24,8 +24,7 @@ public class AdditionTest extends ExecutionDriver {
     public void intPositiveTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
         double actualresult = add.performOperation("Add", inputs);
-        add.takeScreenshot("intPositiveTest");
-        add.takeScreenshot();
+        add.takeScreenshotForAllure("intPositiveTest");// allure attachment
         Assert.assertEquals(actualresult, expectedresult);
     }
 
@@ -42,7 +41,7 @@ public class AdditionTest extends ExecutionDriver {
     public void intNagativeTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
         double actualresult = add.performOperation("Add", inputs);
-        add.takeScreenshot("intNagativeTest");
+        add.takeScreenshotForAllure("intNagativeTest");
         Assert.assertEquals(actualresult, expectedresult);
     }
 
@@ -59,7 +58,7 @@ public class AdditionTest extends ExecutionDriver {
     public void ispositiveagativeTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
         double actualresult = add.performOperation("Add", inputs);
-        add.takeScreenshot("ispositiveagativeTest");
+        add.takeScreenshotForAllure("ispositiveagativeTest");
         Assert.assertEquals(actualresult, expectedresult);
     }
 }

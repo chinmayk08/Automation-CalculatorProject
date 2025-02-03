@@ -15,21 +15,21 @@ public class ArithmaticOperations {
 
     static WebDriver driver;
     CalculatorPage CalculatorPage;
-    public static int count;
-    public void takeScreenshot(String name) {
+    public static int count=0;
+
+    @Attachment(value = "Screenshot - {name}", type = "image/png")
+    public byte[] takeScreenshotForAllure(String name) {
         count++;
         try {
             TakesScreenshot screenshot = (TakesScreenshot) driver;
             File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
-            File destFile = new File("C:\\Users\\Acer\\Desktop\\Automation testing\\SS\\Screenshot_"+name+count);
-            FileUtils.copyFile(srcFile, destFile);
+            File destFile = new File("C:\\Users\\Acer\\Desktop\\Automation testing\\SS\\Screenshot_" + name + count + ".png");
+            FileUtils.copyFile(srcFile, destFile);  // Save locally
+            return FileUtils.readFileToByteArray(srcFile);  // Attach to Allure
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-    }
-    @Attachment(value = "Screenshot", type = "image/png")
-    public byte[] takeScreenshot() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     public ArithmaticOperations(WebDriver driver) {
