@@ -1,12 +1,36 @@
 package Project.businessLib;
 
 import Project.pages.CalculatorPage;
+import io.qameta.allure.Attachment;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+
+import java.io.File;
+import java.io.IOException;
 
 public class ArithmaticOperations {
 
-    WebDriver driver;
+    static WebDriver driver;
     CalculatorPage CalculatorPage;
+    public static int count;
+    public void takeScreenshot(String name) {
+        count++;
+        try {
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
+            File destFile = new File("C:\\Users\\Acer\\Desktop\\Automation testing\\SS\\Screenshot_"+name+count);
+            FileUtils.copyFile(srcFile, destFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] takeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
 
     public ArithmaticOperations(WebDriver driver) {
         this.driver = driver;
@@ -118,4 +142,7 @@ public class ArithmaticOperations {
         }
 
     }
+
+
+
 }

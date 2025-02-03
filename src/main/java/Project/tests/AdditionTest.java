@@ -2,6 +2,7 @@ package Project.tests;
 
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,9 +18,14 @@ public class AdditionTest extends ExecutionDriver {
     }
 
     @Test(priority = 1, dataProvider = "Positivenumbersinputs")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("check int values test")
+    @Step("Addition Integer test")
     public void intPositiveTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
         double actualresult = add.performOperation("Add", inputs);
+        add.takeScreenshot("intPositiveTest");
+        add.takeScreenshot();
         Assert.assertEquals(actualresult, expectedresult);
     }
 
@@ -36,6 +42,7 @@ public class AdditionTest extends ExecutionDriver {
     public void intNagativeTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
         double actualresult = add.performOperation("Add", inputs);
+        add.takeScreenshot("intNagativeTest");
         Assert.assertEquals(actualresult, expectedresult);
     }
 
@@ -52,6 +59,7 @@ public class AdditionTest extends ExecutionDriver {
     public void ispositiveagativeTest(double expectedresult, double... inputs) {
         ArithmaticOperations add = new ArithmaticOperations(driver);
         double actualresult = add.performOperation("Add", inputs);
+        add.takeScreenshot("ispositiveagativeTest");
         Assert.assertEquals(actualresult, expectedresult);
     }
 }

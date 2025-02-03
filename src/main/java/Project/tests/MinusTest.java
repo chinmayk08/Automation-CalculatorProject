@@ -20,6 +20,7 @@ public class MinusTest extends ExecutionDriver {
     public void intPositiveTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("minus",inputs);
+        add.takeScreenshot("intPositiveTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
     //////////////===========================/////////////////////
@@ -36,6 +37,7 @@ public class MinusTest extends ExecutionDriver {
     public void intNagativeTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("minus",inputs);
+        add.takeScreenshot("intNagativeTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
     //////////////===========================/////////////////////
@@ -52,6 +54,7 @@ public class MinusTest extends ExecutionDriver {
     public void ispositiveagativeTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("minus",inputs);
+        add.takeScreenshot("ispositiveagativeTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
 }

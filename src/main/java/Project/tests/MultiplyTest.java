@@ -19,6 +19,7 @@ public class MultiplyTest extends ExecutionDriver {
     public void intPositivemultiplyTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("multiply",inputs);
+        add.takeScreenshot("intPositivemultiplyTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
 
@@ -37,6 +38,7 @@ public class MultiplyTest extends ExecutionDriver {
     public void intNagativemultiplyTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("multiply",inputs);
+        add.takeScreenshot("intNagativemultiplyTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
 
@@ -54,6 +56,7 @@ public class MultiplyTest extends ExecutionDriver {
     public void ispositiveagativemultiplyTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("multiply",inputs);
+        add.takeScreenshot("ispositiveagativemultiplyTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
 }

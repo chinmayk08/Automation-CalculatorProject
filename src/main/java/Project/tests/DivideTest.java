@@ -21,6 +21,7 @@ public class DivideTest extends ExecutionDriver {
     public void intPositiveDivideTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("divide",inputs);
+        add.takeScreenshot("intPositiveDivideTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
     //////////////===========================/////////////////////
@@ -37,6 +38,7 @@ public class DivideTest extends ExecutionDriver {
     public void intNagativeDivideTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("divide",inputs);
+        add.takeScreenshot("intNagativeDivideTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
 
@@ -54,6 +56,7 @@ public class DivideTest extends ExecutionDriver {
     public void ispositiveagativeDivideTest(double expectedresult, double...inputs) {
         ArithmaticOperations add=new ArithmaticOperations(driver);
         double actualresult= add.performOperation("divide",inputs);
+        add.takeScreenshot("ispositiveagativeDivideTest");
         Assert.assertEquals(actualresult,expectedresult);
     }
 }
