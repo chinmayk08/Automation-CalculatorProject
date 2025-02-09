@@ -4,7 +4,14 @@
 
 <suite name="Practical suit 1">
 
-    <test name="ABC">
+    <listeners>
+        <listener class-name="org.testng.reporters.XMLReporter" />
+        <listener class-name="org.testng.reporters.JUnitXMLReporter" />
+        <listener class-name="org.testng.reporters.EmailableReporter2" />
+        <listener class-name="org.testng.reporters.FailedReporter" />
+    </listeners>
+
+    <test name="Calculator">
            <classes>
                <class name="Project.tests.AdditionTest"/>
                <class name="Project.tests.MinusTest"/>

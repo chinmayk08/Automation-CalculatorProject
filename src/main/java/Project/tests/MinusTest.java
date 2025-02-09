@@ -17,11 +17,23 @@ public class MinusTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 1,dataProvider = "Positivenumbersinputs")
-    public void intPositiveTest(double expectedresult, double...inputs) {
-        ArithmaticOperations add=new ArithmaticOperations(driver);
-        double actualresult= add.performOperation("minus",inputs);
-        add.takeScreenshotForAllure("intPositiveTest");
-        Assert.assertEquals(actualresult,expectedresult);
+    public void intPositiveMinusTest(double expectedresult, double...inputs){
+        try {
+            logger.info("Runing intPositiveMinusTest Started..");
+            ArithmaticOperations add=new ArithmaticOperations(driver);
+            double actualresult= add.performOperation("minus",inputs);
+            add.takeScreenshotForAllure("intPositiveMinusTest");
+            try{
+                Assert.assertEquals(actualresult,expectedresult);
+                logger.info("intPositiveMinusTest test case passed");
+            } catch (AssertionError e) {
+                logger.error("intPositiveMinusTest(priority = 1) test case failed expected: "+expectedresult+" and actual: "+actualresult);
+                throw e;
+            }
+        }
+        catch(Exception e){
+            logger.error("Exception occurred during intPositiveMinusTest test case: "+e);
+        }
     }
     //////////////===========================/////////////////////
 
@@ -34,11 +46,23 @@ public class MinusTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2,dataProvider = "Nagativenumbersinputs")
-    public void intNagativeTest(double expectedresult, double...inputs) {
-        ArithmaticOperations add=new ArithmaticOperations(driver);
-        double actualresult= add.performOperation("minus",inputs);
-        add.takeScreenshotForAllure("intNagativeTest");
-        Assert.assertEquals(actualresult,expectedresult);
+    public void intNagativeMinusTest(double expectedresult, double...inputs){
+        try {
+            logger.info("Runing intNagativeMinusTest Started..");
+            ArithmaticOperations add=new ArithmaticOperations(driver);
+            double actualresult= add.performOperation("minus",inputs);
+            add.takeScreenshotForAllure("intNagativeMinusTest");
+            try{
+                Assert.assertEquals(actualresult,expectedresult);
+                logger.info("intNagativeMinusTest test case passed");
+            } catch (AssertionError e) {
+                logger.error("intNagativeMinusTest(priority = 2) test case failed expected: "+expectedresult+" and actual: "+actualresult);
+                throw e;
+            }
+        }
+        catch(Exception e){
+            logger.error("Exception occurred during intNagativeMinusTest test case: "+e);
+        }
     }
     //////////////===========================/////////////////////
 
@@ -51,10 +75,22 @@ public class MinusTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3,dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativeTest(double expectedresult, double...inputs) {
-        ArithmaticOperations add=new ArithmaticOperations(driver);
-        double actualresult= add.performOperation("minus",inputs);
-        add.takeScreenshotForAllure("ispositiveagativeTest");
-        Assert.assertEquals(actualresult,expectedresult);
+    public void ispositiveagativeMinusTest(double expectedresult, double...inputs){
+        try {
+            logger.info("Runing ispositiveagativeMinusTest Started..");
+            ArithmaticOperations add=new ArithmaticOperations(driver);
+            double actualresult= add.performOperation("minus",inputs);
+            add.takeScreenshotForAllure("ispositiveagativeTest");
+            try{
+                Assert.assertEquals(actualresult,expectedresult);
+                logger.info("ispositiveagativeMinusTest test case passed");
+            } catch (AssertionError e) {
+                logger.error("ispositiveagativeMinusTest(priority = 3) test case failed expected: "+expectedresult+" and actual: "+actualresult);
+                throw e;
+            }
+        }
+        catch(Exception e){
+            logger.error("Exception occurred during ispositiveagativeMinusTest test case: "+e);
+        }
     }
 }
