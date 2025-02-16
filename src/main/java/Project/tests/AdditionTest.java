@@ -16,7 +16,7 @@ public class AdditionTest extends ExecutionDriver {
     public Object[][] dataforpositive() {
         return new Object[][]
                 {
-                        {3.1, 1.1, 2.0},
+                        {3.2, 1.1, 2.0},
                 };
     }
 
