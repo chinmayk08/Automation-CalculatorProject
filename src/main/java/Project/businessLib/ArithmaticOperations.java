@@ -1,8 +1,11 @@
 package Project.businessLib;
 
+import Project.framework.ExecutionDriver;
 import Project.pages.CalculatorPage;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +17,7 @@ import java.io.IOException;
 public class ArithmaticOperations {
 
     static WebDriver driver;
+    public static final Logger logger= LogManager.getLogger(ArithmaticOperations.class);
     CalculatorPage CalculatorPage;
     public static int count=0;
 

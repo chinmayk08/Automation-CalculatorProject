@@ -2,11 +2,14 @@ package Project.tests;
 
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MinusTest extends ExecutionDriver {
+    public static final Logger logger= LogManager.getLogger(MinusTest.class);
     @DataProvider(name = "Positivenumbersinputs")
     public Object[][] dataforpositive() {
         
@@ -17,8 +20,7 @@ public class MinusTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 1,dataProvider = "Positivenumbersinputs")
-    public void intPositiveMinusTest(double expectedresult, double...inputs){
-        try {
+    public void intPositiveMinusTest(double expectedresult, double...inputs)throws Exception{
             logger.info("Runing intPositiveMinusTest Started..");
             ArithmaticOperations add=new ArithmaticOperations(driver);
             double actualresult= add.performOperation("minus",inputs);
@@ -30,10 +32,6 @@ public class MinusTest extends ExecutionDriver {
                 logger.error("intPositiveMinusTest(priority = 1) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during intPositiveMinusTest test case: "+e);
-        }
     }
     //////////////===========================/////////////////////
 
@@ -46,8 +44,7 @@ public class MinusTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2,dataProvider = "Nagativenumbersinputs")
-    public void intNagativeMinusTest(double expectedresult, double...inputs){
-        try {
+    public void intNagativeMinusTest(double expectedresult, double...inputs)throws Exception{
             logger.info("Runing intNagativeMinusTest Started..");
             ArithmaticOperations add=new ArithmaticOperations(driver);
             double actualresult= add.performOperation("minus",inputs);
@@ -59,10 +56,6 @@ public class MinusTest extends ExecutionDriver {
                 logger.error("intNagativeMinusTest(priority = 2) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during intNagativeMinusTest test case: "+e);
-        }
     }
     //////////////===========================/////////////////////
 
@@ -75,8 +68,7 @@ public class MinusTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3,dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativeMinusTest(double expectedresult, double...inputs){
-        try {
+    public void ispositiveagativeMinusTest(double expectedresult, double...inputs)throws Exception{
             logger.info("Runing ispositiveagativeMinusTest Started..");
             ArithmaticOperations add=new ArithmaticOperations(driver);
             double actualresult= add.performOperation("minus",inputs);
@@ -88,9 +80,5 @@ public class MinusTest extends ExecutionDriver {
                 logger.error("ispositiveagativeMinusTest(priority = 3) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during ispositiveagativeMinusTest test case: "+e);
-        }
     }
 }

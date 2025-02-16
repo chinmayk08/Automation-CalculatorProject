@@ -1,11 +1,14 @@
 package Project.tests;
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MultiplyTest extends ExecutionDriver {
+    public static final Logger logger= LogManager.getLogger(MultiplyTest.class);
     @DataProvider(name = "Positivenumbersinputs")
     public Object[][] dataforpositive(){
         
@@ -16,8 +19,7 @@ public class MultiplyTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 1,dataProvider ="Positivenumbersinputs" )
-    public void intPositivemultiplyTest(double expectedresult, double...inputs){
-        try {
+    public void intPositivemultiplyTest(double expectedresult, double...inputs)throws Exception{
             logger.info("Runing intPositivemultiplyTest Started..");
             ArithmaticOperations add=new ArithmaticOperations(driver);
             double actualresult= add.performOperation("multiply",inputs);
@@ -29,10 +31,6 @@ public class MultiplyTest extends ExecutionDriver {
                 logger.error("intPositivemultiplyTest(priority = 1) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during intPositivemultiplyTest test case: "+e);
-        }
     }
     //////////////===========================/////////////////////
 
@@ -45,8 +43,7 @@ public class MultiplyTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2,dataProvider ="Nagativenumbersinputs" )
-    public void intNagativemultiplyTest(double expectedresult, double...inputs) {
-        try {
+    public void intNagativemultiplyTest(double expectedresult, double...inputs)throws Exception {
             logger.info("Runing intNagativemultiplyTest Started..");
             ArithmaticOperations add=new ArithmaticOperations(driver);
             double actualresult= add.performOperation("multiply",inputs);
@@ -58,10 +55,6 @@ public class MultiplyTest extends ExecutionDriver {
                 logger.error("intNagativemultiplyTest(priority = 2) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during intNagativemultiplyTest test case: "+e);
-        }
     }
 
     //////////////===========================/////////////////////
@@ -75,8 +68,7 @@ public class MultiplyTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3,dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativemultiplyTest(double expectedresult, double...inputs){
-        try {
+    public void ispositiveagativemultiplyTest(double expectedresult, double...inputs)throws Exception{
             logger.info("Runing ispositiveagativemultiplyTest Started..");
             ArithmaticOperations add=new ArithmaticOperations(driver);
             double actualresult= add.performOperation("multiply",inputs);
@@ -88,9 +80,5 @@ public class MultiplyTest extends ExecutionDriver {
                 logger.error("ispositiveagativemultiplyTest(priority = 3) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during ispositiveagativemultiplyTest test case: "+e);
-        }
     }
 }

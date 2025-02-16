@@ -3,18 +3,20 @@ package Project.tests;
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
 import io.qameta.allure.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class AdditionTest extends ExecutionDriver {
-
+    public static final Logger logger= LogManager.getLogger(AdditionTest.class);
     @DataProvider(name = "Positivenumbersinputs")
     public Object[][] dataforpositive() {
         return new Object[][]
                 {
-                        {3.2, 1.1, 2.0},
+                        {3.1, 1.1, 2.0},
                 };
     }
 
@@ -22,8 +24,8 @@ public class AdditionTest extends ExecutionDriver {
     @Severity(SeverityLevel.NORMAL)
     @Description("check int values test")
     @Step("Addition Integer test")
-    public void intPositiveTest(double expectedresult, double... inputs) {
-        try {
+    public void intPositiveTest(double expectedresult, double... inputs) throws Exception {
+
             logger.info("Runing intPositiveTest Started..");
             ArithmaticOperations add = new ArithmaticOperations(driver);
             double actualresult = add.performOperation("Add", inputs);
@@ -35,12 +37,7 @@ public class AdditionTest extends ExecutionDriver {
                 logger.error("intPositiveTest(priority = 1) test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during intPositiveTest test case: "+e);
-        }
     }
-
     //////////////===========================/////////////////////
 
     @DataProvider(name = "Nagativenumbersinputs")
@@ -51,8 +48,7 @@ public class AdditionTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 2, dataProvider = "Nagativenumbersinputs")
-    public void intNagativeTest(double expectedresult, double... inputs) {
-        try{
+    public void intNagativeTest(double expectedresult, double... inputs)throws Exception {
             logger.info("Runing intNagativeTest Started..");
             ArithmaticOperations add = new ArithmaticOperations(driver);
             double actualresult = add.performOperation("Add", inputs);
@@ -64,10 +60,6 @@ public class AdditionTest extends ExecutionDriver {
                 logger.error("intNagativeTest(priority = 2)test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during intNagativeTest test case: "+e);
-        }
     }
     //////////////===========================/////////////////////
 
@@ -79,8 +71,7 @@ public class AdditionTest extends ExecutionDriver {
                 };
     }
     @Test(priority = 3, dataProvider = "PositiveNagativenumbersinputs")
-    public void ispositiveagativeTest(double expectedresult, double... inputs){
-        try{
+    public void ispositiveagativeTest(double expectedresult, double... inputs)throws Exception{
             logger.info("Runing ispositiveagativeTest Started..");
             ArithmaticOperations add = new ArithmaticOperations(driver);
             double actualresult = add.performOperation("Add", inputs);
@@ -92,9 +83,5 @@ public class AdditionTest extends ExecutionDriver {
                 logger.error("ispositiveagativeTest(priority = 3)test case failed expected: "+expectedresult+" and actual: "+actualresult);
                 throw e;
             }
-        }
-        catch(Exception e){
-            logger.error("Exception occurred during ispositiveagativeTest test case: "+e);
-        }
     }
 }
