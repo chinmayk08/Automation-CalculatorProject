@@ -1,5 +1,6 @@
 package Project.tests;
 
+import Project.Utility.RetryFailedTest;
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
 import io.qameta.allure.*;
@@ -20,10 +21,9 @@ public class AdditionTest extends ExecutionDriver {
                 };
     }
 
-    @Test(priority = 1, dataProvider = "Positivenumbersinputs")
+    @Test(priority = 1, dataProvider = "Positivenumbersinputs",retryAnalyzer = RetryFailedTest.class)
     @Severity(SeverityLevel.NORMAL)
     @Description("check int values test")
-    @Step("Addition Integer test")
     public void intPositiveTest(double expectedresult, double... inputs) throws Exception {
 
             logger.info("Runing intPositiveTest Started..");

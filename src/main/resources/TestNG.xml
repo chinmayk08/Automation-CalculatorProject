@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="Practical suit 1" parallel="tests" thread-count="2">
+<suite name="Practical suit 1" parallel="tests" thread-count="3">
 
     <listeners>
         <listener class-name="org.testng.reporters.XMLReporter" />
@@ -10,6 +10,7 @@
         <listener class-name="org.testng.reporters.EmailableReporter2" />
         <listener class-name="org.testng.reporters.FailedReporter" />
         <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+        <listener class-name="Project.Utility.RetryListener"/>
     </listeners>
 
     <test name="Calculator">
@@ -21,9 +22,9 @@
            </classes>
     </test>
 
-    <!--<test name="XYZ">
+   <!--<test name="XYZ">
         <classes>lu7yoo0ppp
-            <class name="corejava.testng.Assignment1"/>
+           <class name="corejava.testng.Assignment1"/>
         </classes>
     </test>-->
 
