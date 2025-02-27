@@ -21,7 +21,7 @@ public class AdditionTest extends ExecutionDriver {
                 };
     }
 
-    @Test(priority = 1, dataProvider = "Positivenumbersinputs",retryAnalyzer = RetryFailedTest.class)
+    @Test(priority = 1, dataProvider = "Positivenumbersinputs")
     @Severity(SeverityLevel.NORMAL)
     @Description("check int values test")
     public void intPositiveTest(double expectedresult, double... inputs) throws Exception {
