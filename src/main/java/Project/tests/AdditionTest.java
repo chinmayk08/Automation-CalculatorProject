@@ -46,7 +46,8 @@ public class AdditionTest extends ExecutionDriver {
     public Object[][] datafornagative() {
         return new Object[][]
                 {
-                        {-13, -5, -8},
+                        {-12, -4, -8},
+
                 };
     }
 
