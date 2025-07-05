@@ -13,6 +13,8 @@ public class RetryFailedTest implements IRetryAnalyzer {
             retryCount++;
             System.out.println("Retrying failed test: " + result.getName() + " | Attempt " + (retryCount + 1));
             return true;  // Retry test
+
+
         }
         return false;  // Stop retrying after max attempts
     }
