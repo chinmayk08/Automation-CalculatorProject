@@ -1,4 +1,4 @@
-package Project.tests;
+package project.Tests;
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
 import org.apache.logging.log4j.LogManager;

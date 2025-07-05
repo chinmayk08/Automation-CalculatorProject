@@ -15,10 +15,10 @@
 
     <test name="Calculator">
            <classes>
-               <class name="Project.tests.AdditionTest"/>
-               <class name="Project.tests.MinusTest"/>
-               <class name="Project.tests.DivideTest"/>
-               <class name="Project.tests.MultiplyTest"/>
+               <class name="project.Tests.AdditionTest"/>
+               <class name="project.Tests.MinusTest"/>
+               <class name="project.Tests.DivideTest"/>
+               <class name="project.Tests.MultiplyTest"/>
            </classes>
     </test>
 

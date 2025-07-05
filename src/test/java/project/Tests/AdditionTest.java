@@ -1,13 +1,11 @@
-package Project.tests;
+package project.Tests;
 
-import Project.Utility.RetryFailedTest;
 import Project.businessLib.ArithmaticOperations;
 import Project.framework.ExecutionDriver;
 import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
