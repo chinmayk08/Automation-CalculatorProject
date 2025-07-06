@@ -28,6 +28,8 @@ public class ExecutionDriver {
             logger.error("Exception occurred while webdriver open of url opening: "+e);
         }
     }
+
+
     @AfterSuite
     public void aftersuit(){
         logger.info("Closing WebDriver...");
