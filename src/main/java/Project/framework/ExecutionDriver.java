@@ -18,6 +18,8 @@ public class ExecutionDriver {
     @BeforeSuite
     public void ExecutionDriver(){
         try{
+
+
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             logger.info("Webdriver setup successfully");
