@@ -18,8 +18,6 @@ public class ExecutionDriver {
     @BeforeSuite
     public void ExecutionDriver(){
         try{
-
-
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             logger.info("Webdriver setup successfully");
@@ -30,8 +28,6 @@ public class ExecutionDriver {
             logger.error("Exception occurred while webdriver open of url opening: "+e);
         }
     }
-
-
     @AfterSuite
     public void aftersuit(){
         logger.info("Closing WebDriver...");
