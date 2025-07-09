@@ -63,7 +63,7 @@ public class CalculatorPage {
     public WebElement divide;
 
     @FindBy(xpath = "//span[text()='.']")
-    public WebElement point;
+    public WebElement point;//
 
     @FindBy(xpath = "//span[text()='Back']")
     public WebElement back;
