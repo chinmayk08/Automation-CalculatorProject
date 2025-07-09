@@ -18,10 +18,13 @@ public class ExecutionDriver {
     @BeforeSuite
     public void ExecutionDriver(){
         try{
-            WebDriverManager.chromedriver().setup();
+
+
+             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             logger.info("Webdriver setup successfully");
             driver.manage().window().maximize();
+            logger.info("chrome maximized");
             driver.get("https://www.calculator.net");
             logger.info("calculator page open successfully");
         } catch (Exception e) {
